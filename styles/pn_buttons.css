@@ -1,0 +1,364 @@
+/**
+  * Kanso - Semantic Flat pn_buttons
+  * Author & copyright (c) 2013: Kris Olszewski
+  * Mertize Icons by Alessio Atzeni
+  * Support: IE8+
+  * 
+  * Repo: https://github.com/KrisOlszewski/Kanso/
+  */
+
+
+
+.pn_button {
+  display: inline-block;
+  margin: 0;
+  padding: 7px 14px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #ffffff;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: Arial, "Lucida Grande", sans-serif;
+  line-height: 1.5384615384615385;
+  cursor: pointer;
+  outline: none;
+  background-color: #434a54;
+  border-color: #434a54;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.pn_button:hover,
+.pn_button:focus {
+  background-color: #5a6370;
+  border-color: #5a6370;
+}
+.pn_button.is-active,
+.pn_button:active {
+  background-color: #2c3138;
+  border-color: #2c3138;
+}
+.pn_button.is-disabled,
+.pn_button[disabled] {
+  background-color: #707c8d;
+  border-color: #707c8d;
+}
+.pn_button:hover,
+.pn_button:focus {
+  color: #ffffff;
+}
+.pn_button.is-disabled,
+.pn_button[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.pn_button.blue {
+  background-color: #3bafda;
+  border-color: #3bafda;
+}
+.pn_button.blue:hover,
+.pn_button.blue:focus {
+  background-color: #66c1e2;
+  border-color: #66c1e2;
+}
+.pn_button.blue.is-active,
+.pn_button.blue:active {
+  background-color: #2494be;
+  border-color: #2494be;
+}
+.pn_button.blue.is-disabled,
+.pn_button.blue[disabled] {
+  background-color: #91d2ea;
+  border-color: #91d2ea;
+}
+.pn_button.purple {
+  background-color: #967adc;
+  border-color: #967adc;
+}
+.pn_button.purple:hover,
+.pn_button.purple:focus {
+  background-color: #b6a2e7;
+  border-color: #b6a2e7;
+}
+.pn_button.purple.is-active,
+.pn_button.purple:active {
+  background-color: #7652d1;
+  border-color: #7652d1;
+}
+.pn_button.purple.is-disabled,
+.pn_button.purple[disabled] {
+  background-color: #d6cbf1;
+  border-color: #d6cbf1;
+}
+.pn_button.pink {
+  background-color: #d770ad;
+  border-color: #d770ad;
+}
+.pn_button.pink:hover,
+.pn_button.pink:focus {
+  background-color: #e298c4;
+  border-color: #e298c4;
+}
+.pn_button.pink.is-active,
+.pn_button.pink:active {
+  background-color: #cc4896;
+  border-color: #cc4896;
+}
+.pn_button.pink.is-disabled,
+.pn_button.pink[disabled] {
+  background-color: #edc0db;
+  border-color: #edc0db;
+}
+.pn_button.green {
+  background-color: #8cc152;
+  border-color: #8cc152;
+}
+.pn_button.green:hover,
+.pn_button.green:focus {
+  background-color: #a5ce78;
+  border-color: #a5ce78;
+}
+.pn_button.green.is-active,
+.pn_button.green:active {
+  background-color: #72a53b;
+  border-color: #72a53b;
+}
+.pn_button.green.is-disabled,
+.pn_button.green[disabled] {
+  background-color: #bedc9d;
+  border-color: #bedc9d;
+}
+.pn_button.red {
+  background-color: #da4453;
+  border-color: #da4453;
+}
+.pn_button.red:hover,
+.pn_button.red:focus {
+  background-color: #e26f7a;
+  border-color: #e26f7a;
+}
+.pn_button.red.is-active,
+.pn_button.red:active {
+  background-color: #c42737;
+  border-color: #c42737;
+}
+.pn_button.red.is-disabled,
+.pn_button.red[disabled] {
+  background-color: #eb99a1;
+  border-color: #eb99a1;
+}
+.pn_button.yellow {
+  background-color: #f6bb42;
+  border-color: #f6bb42;
+}
+.pn_button.yellow:hover,
+.pn_button.yellow:focus {
+  background-color: #f8cd73;
+  border-color: #f8cd73;
+}
+.pn_button.yellow.is-active,
+.pn_button.yellow:active {
+  background-color: #f4a911;
+  border-color: #f4a911;
+}
+.pn_button.yellow.is-disabled,
+.pn_button.yellow[disabled] {
+  background-color: #fbdea3;
+  border-color: #fbdea3;
+}
+.pn_button.link {
+  background-color: transparent;
+  border-color: transparent;
+  color: #3bafda;
+}
+.pn_button.link:hover,
+.pn_button.link:focus,
+.pn_button.link.is-active,
+.pn_button.link:active {
+  background-color: transparent;
+  color: #434a54;
+}
+.pn_button.link.is-disabled,
+.pn_button.link[disabled] {
+  background-color: transparent;
+  color: #707c8d;
+}
+.pn_button.is-block {
+  display: block;
+  width: 100%;
+}
+.pn_button.is-block + .is-block {
+  margin-top: 10px;
+}
+.pn_button.has-icon {
+  padding: 7px;
+}
+.pn_button.has-icon.has-text {
+  padding: 7px 10px 7px 7px;
+}
+.pn_button.has-icon.has-text [class^="icon-"],
+.pn_button.has-icon.has-text [class*=" icon-"] {
+  margin-right: 7px;
+}
+input.pn_button,
+pn_button.pn_button {
+  font-weight: normal;
+  width: auto;
+}
+input.pn_button.is-block,
+pn_button.pn_button.is-block {
+  width: 100%;
+}
+.pn_button-group-row:after,
+.pn_button-group-row:before {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+.pn_button-group-row:after {
+  clear: both;
+}
+.pn_button-group {
+  position: relative;
+  display: block;
+  float: left;
+}
+.pn_button-group + .pn_button-group {
+  margin-left: 40px;
+}
+.pn_button-group.push-right {
+  float: right;
+}
+.pn_button-group > .pn_button {
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+.pn_button-group > .pn_button:last-child {
+  margin-right: 0;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url(images/icon-sprite.png);
+  background-repeat: no-repeat;
+  vertical-align: top;
+  text-indent: 20px;
+  font: 0/0 a;
+}
+.icon-search {
+  background-position: 0 0;
+}
+.icon-check {
+  background-position: -20px 0;
+}
+.icon-plus {
+  background-position: -40px 0;
+}
+.icon-minus {
+  background-position: -60px 0;
+}
+.icon-cross {
+  background-position: -80px 0;
+}
+.icon-help {
+  background-position: -100px 0;
+}
+.icon-pin {
+  background-position: -120px 0;
+}
+.icon-cloud {
+  background-position: -140px 0;
+}
+.icon-arrow-left {
+  background-position: -160px 0;
+}
+.icon-arrow-right {
+  background-position: -180px 0;
+}
+.icon-arrow-up {
+  background-position: -200px 0;
+}
+.icon-arrow-down {
+  background-position: -220px 0;
+}
+.icon-attachment {
+  background-position: -240px 0;
+}
+.icon-chat {
+  background-position: -260px 0;
+}
+.icon-config {
+  background-position: -280px 0;
+}
+.icon-tool {
+  background-position: -300px 0;
+}
+.icon-phone {
+  background-position: -320px 0;
+}
+.icon-minimize {
+  background-position: -340px 0;
+}
+.icon-maximize {
+  background-position: -360px 0;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    -webkit-background-size: 380px 20px;
+    -moz-background-size: 380px 20px;
+    -o-background-size: 380px 20px;
+    background-size: 380px 20px;
+    background-image: url(images/icon-sprite@2x.png);
+  }
+}
+
+
+
+/****************************************************
+ *  Push Button
+ *****************************************************/
+.push_button{
+  position:relative;
+  outline: none;
+  width:200px;
+  color:#FFF;
+  display:block;
+  text-decoration:none;
+  margin:0 auto;
+  border-radius:5px;
+  border:solid 1px #D94E3B;
+  background:#cb3b27;
+  text-align:center;
+  padding:40px 50px 50px;
+  font-size:40px;
+  font-weight: bold;
+  
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  
+  -webkit-box-shadow: 0px 15px 0px #84261a;
+        -moz-box-shadow: 0px 15px 0px #84261a;
+        box-shadow: 0px 15px 0px #84261a;
+}
+
+.push_button:active{
+    -webkit-box-shadow: 0px 5px 0px #84261a;
+    -moz-box-shadow: 0px 5px 0px #84261a;
+    box-shadow: 0px 5px 0px #84261a;
+    position:relative;
+    top:11px;
+}

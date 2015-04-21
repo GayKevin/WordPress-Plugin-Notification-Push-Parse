@@ -1,0 +1,96 @@
+/**
+ * @package Benarieb
+ * @version 1.0
+ */
+/*
+Plugin Name: Push Notifications iOS
+Description: Плагин для отправки уведомлений на iOS приложение на базе <a href="http://www.easyapns.com/">EASY APNS</a>.
+Author:  Amin Benarieb
+Version: 0.1
+License: GPLv2 or later
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+*/
+
+.apns_block{
+	width: 800px;
+	padding: 10px;
+	margin: 20px 0;
+	background: rgba(0,0,0,0.05);
+}
+
+
+.apns_block div{
+	margin:20px;
+	padding: 20px;
+	background: rgba(0,0,0,0.05);
+	/*-webkit-box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.75) inset;
+	-moz-box-shadow:    0px 0px 4px rgba(50, 50, 50, 0.75) inset;
+	box-shadow:         0px 0px 4px rgba(50, 50, 50, 0.75) inset;*/
+}
+
+.apns_block .help{
+
+	position: fixed;
+	bottom: 0;
+	right: 0;
+
+}
+
+.apns_block input:not(.pn_button):not(.pn_radio), .apns_block select, .apns_block option{
+	height: 50px;
+	width:500px;
+}
+
+.apns_block select, .apns_block option{
+	font-size:20px;
+}
+
+.apns_block textarea{
+	width: 500px;
+	height: 250px;
+}
+
+.apns_block input[type=radio] {
+  opacity: 0;
+  z-index: 9999;
+}
+
+.apns_block input+.pn_button{
+	margin-left: -50px;
+	margin-top: -2px;
+}
+
+.overlay {
+  display: inline-block;
+  position: relative;
+  height: 10px;
+  width: 10px;
+  background:#dfdfdf;
+  border: 15px solid #dfdfdf;
+  -webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+}
+.apns_block input[type=radio]:checked + .overlay {
+  background:#aaa;
+}
+
+.attachment{
+	float: right;
+	margin-top: -50px;
+
+}
