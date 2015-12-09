@@ -40,15 +40,19 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 
 function push_notifications_css(){
-
-	echo '<link rel="stylesheet" type="text/css" href="'.plugins_url().'/push-notifications-parse/styles/pn_style.css'.'">';
-	echo '<link rel="stylesheet" type="text/css" href="'.plugins_url().'/push-notifications-parse/styles/pn_buttons.css'.'">';
-	echo '<script src="'.plugins_url().'/push-notifications-parse/script.js'.'"></script>';
+	$array = split('\\\\', dirname(__FILE__));
+	$folder = $array[count($array) - 1];
+    echo '<link rel="stylesheet" type="text/css" href="'.plugins_url().'/'. $folder .'/styles/pn_style.css'.'">';
+	echo '<link rel="stylesheet" type="text/css" href="'.plugins_url().'/'. $folder .'/styles/pn_buttons.css'.'">';
+	echo '<script src="'.plugins_url().'/' . $folder . '/script.js'.'"></script>';
 }
 
 function push_notifications_admin_pages() {
 	wp_enqueue_media();
-	add_menu_page( 'Push Notifications Parse', 'Parse Push Notifications', 'manage_options', 'push_notifications', 'push_notifications_options_page', plugins_url( '/push-notifications-parse/img/icon.png' ), 40 );
+	$array = split('\\\\', dirname(__FILE__));
+	$folder = $array[count($array) - 1];
+	error_log($folder , 0);
+	add_menu_page( 'Push Notifications Parse', 'Parse Push Notifications', 'manage_options', 'push_notifications', 'push_notifications_options_page', plugins_url($folder . '/img/icon.png' ), 40 );
 }
 
 /*----------------------------------*/
@@ -80,8 +84,9 @@ function push_notifications_send($message){
 
 function push_notifications_logo(){
 
-
-	echo "<img width='50' hegiht='50' src='".plugins_url()."/push-notifications-parse/img/logo.png'/>";
+	$array = split('\\\\', dirname(__FILE__));
+	$folder = $array[count($array) - 1];
+	echo "<img width='50' hegiht='50' src='".plugins_url()."/" . $folder . "/img/logo.png'/>";
 }
 
 
