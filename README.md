@@ -1,5 +1,5 @@
-=== Push Notification Parse ===
-
+Push Notification Parse
+------------
 Contributors: kevin.gay
 Tags: push notifications, Android, iOS, Parse, Parse.com
 Requires at least: 4.0
@@ -10,21 +10,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin allows you to send Push Notifications directly from your WordPress site to your Parse.com account.
 
-
-
-== Description ==
-
+Description
+------------
 This plugin allows you to send notifications directly from your WordPress site to your Parse.com account to all devices
 that i've been registered in it.
 
 Now, go to Installation section to find out how to install and use plugin. 
 
 
-
-
-== Installation ==
-
-
+Installation
+------------
 This section describes how to install the plugin and get it working.
 
 
@@ -36,7 +31,7 @@ This section describes how to install the plugin and get it working.
 6. Write
 7. Enjoy!
 
-== Changelog ==
-
+Changelog
+------------
 = 0.1 =
 First alpha version send to iOs and Android at the same time.
