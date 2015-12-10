@@ -1,21 +1,9 @@
 <?php
-
-require 'CurlParse.php';
-
-use Parse\ParseQuery;
-use Parse\ParsePush;
-use Parse\ParseInstallation;
-use Parse\ParseClient;
-
-/**
- * @package Benarieb
- * @version 1.0
- */
 /*
 Plugin Name: Push Notifications Parse
 Description: This plugin allows you to send Push Notifications directly from your WordPress site to your Parse.com account.
 Author:  Kevin Gay
-Version: 0.1
+Version: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +29,12 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+require 'CurlParse.php';
+
+use Parse\ParseQuery;
+use Parse\ParsePush;
+use Parse\ParseInstallation;
+use Parse\ParseClient;
 
 function push_notifications_css(){
 	$array = split('\\\\', dirname(__FILE__));
