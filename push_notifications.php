@@ -1,4 +1,7 @@
 <?php
+
+require 'CurlParse.php';
+
 use Parse\ParseQuery;
 use Parse\ParsePush;
 use Parse\ParseInstallation;
@@ -51,7 +54,6 @@ function push_notifications_admin_pages() {
 	wp_enqueue_media();
 	$array = split('\\\\', dirname(__FILE__));
 	$folder = $array[count($array) - 1];
-	error_log($folder , 0);
 	add_menu_page( 'Push Notifications Parse', 'Parse Push Notifications', 'manage_options', 'push_notifications', 'push_notifications_options_page', plugins_url($folder . '/img/icon.png' ), 40 );
 }
 
@@ -60,7 +62,17 @@ function push_notifications_admin_pages() {
 
 
 function push_notifications_send($message){
+
+    if (file_exists(dirname(__FILE__).'/parse-php-sdk-master/autoload.php') == false){
+        $curl = new CurlParse();
+        $curl->download("https://github.com/ParsePlatform/parse-php-sdk/archive/master.zip");
+    }
     require('parse-php-sdk-master/autoload.php');
+
+    $app_id     = "";
+    $rest_key   = "";
+    $master_key = "";
+
     ParseClient::initialize( $app_id, $rest_key, $master_key );
 	$data = array("alert" => $message);
 
@@ -77,7 +89,8 @@ function push_notifications_send($message){
     ParsePush::send(array(
         "where" => $query,
         "data" => $data
-    ));}
+    ));
+}
 
 /*----------------------------------*/
 /*----------------------------------*/
