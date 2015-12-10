@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: thieg
+ * User: Kévin Gay
  * Date: 10/12/2015
  * Time: 01:50
  */

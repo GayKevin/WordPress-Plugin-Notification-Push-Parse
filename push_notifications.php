@@ -3,7 +3,7 @@
 Plugin Name: Push Notifications Parse
 Description: This plugin allows you to send Push Notifications directly from your WordPress site to your Parse.com account.
 Author:  Kevin Gay
-Version: 0.2.2
+Version: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,13 +44,16 @@ function push_notifications_css(){
 	echo '<script src="'.plugins_url().'/' . $folder . '/script.js'.'"></script>';
 }
 
-function push_notifications_admin_pages() {
-	wp_enqueue_media();
-	$array = split('\\\\', dirname(__FILE__));
-	$folder = $array[count($array) - 1];
-	add_menu_page( 'Push Notifications Parse', 'Parse Push Notifications', 'manage_options', 'push_notifications', 'push_notifications_options_page', plugins_url($folder . '/img/icon.png' ), 40 );
+function setting_admin(){
+    include ('options-general.php');
 }
 
+function push_notifications_admin_pages() {
+	$array = split('\\\\', dirname(__FILE__));
+	$folder = $array[count($array) - 1];
+	add_menu_page( 'Send Push', 'Parse Push Notifications', 'manage_options', 'push_notifications', 'push_notifications', plugins_url($folder . '/img/icon.png' ), 40 );
+	add_submenu_page( 'push_notifications', 'Settings', 'Settings', 'manage_options', $folder."/options-general.php", "");
+}
 /*----------------------------------*/
 /*----------------------------------*/
 
@@ -63,11 +66,7 @@ function push_notifications_send($message){
     }
     require('parse-php-sdk-master/autoload.php');
 
-    $app_id     = "";
-    $rest_key   = "";
-    $master_key = "";
-
-    ParseClient::initialize( $app_id, $rest_key, $master_key );
+    ParseClient::initialize( get_option("AppRest"), get_option("RestKey"), get_option("MasterKey"));
 	$data = array("alert" => $message);
 
     // Push to Channels
@@ -78,7 +77,7 @@ function push_notifications_send($message){
 
     // Push to Query
     $query = ParseInstallation::query();
-    $query->containedIn("deviceType", ["ios", "android"]);;
+    $query->containedIn("deviceType", ["ios", "android", "winrt", "winphone"]);;
 
     ParsePush::send(array(
         "where" => $query,
@@ -126,11 +125,10 @@ function push_notifications_create_form(){
 			wp_nonce_field('push_notifications_form'); 
 		?>
 						<div>
-							<label><input class='pn_radio' type='radio' checked name='pn_push_type' value='default'><span class='overlay'></span></label>
-							<p><input type='text' name='pn_text'   placeholder='Text' /></p>
+							<p><input type='text' name='pn_text' placeholder='Notification Push Text' /></p>
 						</div>
 						<div>
-							<input type='submit' id="push_button" class='pn blue push_button' name='push_notifications_push_btn' value='Send' />
+							<input type='submit' id="push_button" class='pn blue push_button' name='push_notifications_push_btn' value='Send Push' />
 						</div>
 			</form>
         </div>
@@ -140,7 +138,7 @@ function push_notifications_create_form(){
 /*----------------------------------*/
 /*----------------------------------*/
 
-function push_notifications_options_page() {
+function push_notifications() {
 
 	echo"<center><div id='apns' class='apns_block' >
 	<a class='pn_button has-icon help'><i class='icon-help'>Help</i></a>";
