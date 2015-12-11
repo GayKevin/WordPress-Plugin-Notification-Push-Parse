@@ -21,11 +21,11 @@ Installation
 This section describes how to install the plugin and get it working.
 
 
--1. Upload `push_notifications_parse` to the `/wp-content/plugins/` directory
--2. Activate the plugin through the 'Plugins' menu in WordPress
--3. Go to the Settings section and enter your correct keys of your App of Parse.com
--5. Write you text and click on Send Push!
--4. Enjoy!
+- 1. Upload `push_notifications_parse` to the `/wp-content/plugins/` directory
+- 2. Activate the plugin through the 'Plugins' menu in WordPress
+- 3. Go to the Settings section and enter your correct keys of your App of Parse.com
+- 5. Write you text and click on Send Push!
+- 4. Enjoy!
 
 Troubleshooting	
 ------------
